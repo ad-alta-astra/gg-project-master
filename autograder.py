@@ -41,7 +41,7 @@ def text(resultstr, answerstr):
         longest = longest.size/float(max(len_result, len_answer))
 
         if longest > 0.3:
-            matchlen = sum([m[2] for m in s.get_matching_blocks() if m[2] > 1])
+            matchlen = sum(m[2] for m in s.get_matching_blocks() if m[2] > 1)
             textscore = float(matchlen)/max(len_result, len_answer)
         else:
             textscore = longest
